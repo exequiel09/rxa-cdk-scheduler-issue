@@ -1,12 +1,12 @@
 import { catchError, EMPTY, throwError } from 'rxjs';
-import { TestScheduler } from 'rxjs/testing';
+import { RxTestScheduler } from 'rxjs-zone-less';
 import { retryBackoff } from './backoff-zoneless';
 
 describe('RxJS Timer (via rxjs-zone-less)', () => {
-  let testScheduler: TestScheduler;
+  let testScheduler: RxTestScheduler;
 
   beforeEach(() => {
-    testScheduler = new TestScheduler((actual, expected) => {
+    testScheduler = new RxTestScheduler((actual, expected) => {
       expect(actual).toEqual(expected);
     });
   });
