@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/rxa-cdk-scheduler-issue/src",
+  "prefix": "rxa-cdk-scheduler-issue",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/rxa-cdk-scheduler-issue",
+        "index": "apps/rxa-cdk-scheduler-issue/src/index.html",
+        "main": "apps/rxa-cdk-scheduler-issue/src/main.ts",
+        "polyfills": "apps/rxa-cdk-scheduler-issue/src/polyfills.ts",
+        "tsConfig": "apps/rxa-cdk-scheduler-issue/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/rxa-cdk-scheduler-issue/src/favicon.ico",
+          "apps/rxa-cdk-scheduler-issue/src/assets"
+        ],
+        "styles": ["apps/rxa-cdk-scheduler-issue/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/rxa-cdk-scheduler-issue/src/environments/environment.ts",
+              "with": "apps/rxa-cdk-scheduler-issue/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "rxa-cdk-scheduler-issue:build:production"
+        },
+        "development": {
+          "browserTarget": "rxa-cdk-scheduler-issue:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "rxa-cdk-scheduler-issue:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/rxa-cdk-scheduler-issue/**/*.ts",
+          "apps/rxa-cdk-scheduler-issue/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/rxa-cdk-scheduler-issue"],
+      "options": {
+        "jestConfig": "apps/rxa-cdk-scheduler-issue/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "rxa-cdk-scheduler-issue": "apps/rxa-cdk-scheduler-issue",
+    "rxa-cdk-scheduler-issue-e2e": "apps/rxa-cdk-scheduler-issue-e2e"
+  }
+}
