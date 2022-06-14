@@ -2,7 +2,7 @@ import { catchError, EMPTY, throwError } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 import { retryBackoff } from './backoff-zoneless';
 
-describe('RxJS Timer (via @rx-angular/cdk)', () => {
+describe('RxJS Timer (via rxjs-zone-less)', () => {
   let testScheduler: TestScheduler;
 
   beforeEach(() => {
