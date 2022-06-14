@@ -2,7 +2,7 @@ import { catchError, EMPTY, throwError } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 import { retryBackoff } from './backoff-rxa';
 
-describe('RxJS Timer', () => {
+describe('RxJS Timer (via @rx-angular/cdk)', () => {
   let testScheduler: TestScheduler;
 
   beforeEach(() => {
